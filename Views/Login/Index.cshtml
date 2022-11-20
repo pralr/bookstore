@@ -1,0 +1,53 @@
+﻿@model LoginModel
+@{
+    Layout = "_LayoutDeslogada";
+    ViewData["Title"] = "Login";
+}
+
+<br />
+<br />
+
+ @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-dismissible alert-primary">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+<div class="text-center">
+    <br /><br />
+    <h1 class="display-4">Inicie sua sessão</h1>
+    <br />
+
+    <div class="card text-white bg-secondary mb-3" style="max-width: 100rem;">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <p class="card-text">
+                <!-- ação (asp action) de quando ele clicar em entrar vai ser para a ação entrar criada em controller, e o método que vai seguir é o post -->
+                <form asp-controller="Login" asp-action="Entrar" method="post">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="exampleInputLogin" class="form-label mt-4">Login</label>
+                            <input type="login" asp-for="Login" class="form-control" id="exampleInputLogin" aria-describedby="emailHelp" placeholder="Digite seu login">
+                            @Html.ValidationMessageFor(x => x.Login)
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="form-label mt-4">Senha</label>
+                            <input type="password" asp-for="Senha" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                            @Html.ValidationMessageFor(x => x.Senha)
+                        </div>
+                        <br />
+                        <br />
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </fieldset>
+
+                    <br />
+                    <br />
+                    <a asp-controller="Cadastro" asp-action="Index">Não tem uma conta?</a>
+                </form>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Visando Livros</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-quartz.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LivrariaVirtual.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Visando Livros</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="" asp-action="">Página inicial</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" asp-controller="" asp-action="" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="" asp-action="">Fantasia</a>
+                                <a class="dropdown-item" asp-controller="" asp-action="">Romance</a>
+                                <a class="dropdown-item" asp-controller="" asp-action="">Comédia</a>
+                                <a class="dropdown-item" asp-controller="" asp-action="">Autoajuda</a>
+                                <a class="dropdown-item" asp-controller="" asp-action="">Terror</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="" asp-action="">Outros</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Contato" asp-action="Index">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Usuario" asp-action="Index">Usuários</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Login" asp-action="Index">Login</a> <!-- caso esteja logado, irá aparecer "configurações de conta" e "venda seu livro" -->
+                        </li>
+                      
+                    </ul>
+
+                    <form class="d-flex">
+                        <input class="pesquisar-livro" type="text" placeholder="Pesquise um livro">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Visando Livros - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

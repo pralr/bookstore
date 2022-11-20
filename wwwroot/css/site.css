@@ -1,0 +1,52 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.nav-link, .nav-link dropdown-toggle {
+    color: #4682B4;
+}
+
+.dropdown-item {
+    color: #080302;
+}
+
+.fale-conosco, .passe-cadastro {
+    text-decoration: none;
+}
+
+.fale-conosco:hover, .passe-cadastro:hover {
+        color: #080302;
+}
+
+.pesquisar-livro {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4682B4;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #4682B4;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
